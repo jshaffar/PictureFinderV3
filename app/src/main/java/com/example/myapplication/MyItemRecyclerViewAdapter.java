@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.myapplication.ItemFragment.OnListFragmentInteractionListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,8 +24,14 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
     private final OnListFragmentInteractionListener mListener;
 
     public MyItemRecyclerViewAdapter(List<PictureItem> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
+        mValues = items; //is this what changes?
         mListener = listener;
+    }
+
+    //created by me. This should update list based on contain
+    public List<PictureItem> setList(String s) {
+
+        return new ArrayList<PictureItem>();
     }
 
     @Override

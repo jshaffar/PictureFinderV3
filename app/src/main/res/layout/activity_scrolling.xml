@@ -14,32 +14,39 @@
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="382dp"
+            android:layout_height="83dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="40dp"
+            android:imeOptions="actionSearch"
+            android:layout_gravity="center"
+            android:inputType="text"
+            android:padding="8dp"
+            android:fontFamily="sans-serif-condensed-medium" />
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="431dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:text="Type in the box to see results"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_scrolling" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_scrolling" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@drawable/ic_add_white_24dp"
@@ -52,5 +59,27 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="799dp"
+        android:fitsSystemWindows="true"
+        app:contentScrim="@color/design_default_color_primary_dark"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        app:toolbarId="@+id/toolbar"
+        tools:visibility="visible">
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

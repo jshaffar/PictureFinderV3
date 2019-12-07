@@ -15,9 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.File;
 
@@ -88,11 +92,31 @@ public class ScrollingActivity extends AppCompatActivity
                 PictureContent.loadImage(new File(filePath));
                 recyclerViewAdapter.notifyItemInserted(0);
                 progressBar.setVisibility(View.GONE);
-                fab.setVisibility(View.VISIBLE);
             }
         };
 
         context.registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+        final TextView textView = findViewById(R.id.textView);
+
+        EditText editText = findViewById(R.id.editText);
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                textView.setText("Type To Get Result");
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                textView.setText("Search For: " + charSequence);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                //  textView.setText("what the fuk is up");
+            }
+        });
     }
 
     @Override
