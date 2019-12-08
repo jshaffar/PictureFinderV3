@@ -1,5 +1,7 @@
-# Android RecyclerView Example
+# Picture Finder App
 
-This example app shows how to use the RecyclerView to show images loaded from storage, with downloading random images using DownloadManager.
+This app allows you to add text(tags) and search for pictures.
+Android functionality is mail feature
+This is built on top of recycleview as implemented by
+https://github.com/syonip/android-recycler-example
 
-A full tutorial can be found at [here](https://www.learningsomethingnew.com/how-to-use-a-recycler-view-to-show-images-from-storage)
