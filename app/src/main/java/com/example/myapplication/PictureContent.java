@@ -79,8 +79,14 @@ public class PictureContent {
         PictureItem newItem = new PictureItem();
         newItem.uri = Uri.fromFile(file);
         newItem.date = getDateFromUri(newItem.uri);
+        newItem.tag = addTagToView("what's up");
         addItem(newItem);
     }
+
+    public static String addTagToView(String s) {
+        return "i gotta pee";
+    }
+
 
     private static void addItem(PictureItem item) {
         ITEMS.add(0, item);

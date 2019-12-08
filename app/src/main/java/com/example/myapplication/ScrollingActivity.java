@@ -20,7 +20,9 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.File;
@@ -59,20 +61,7 @@ public class ScrollingActivity extends AppCompatActivity
 
         progressBar = findViewById(R.id.indeterminateBar);
 
-        final FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        progressBar.setVisibility(View.VISIBLE);
-                        fab.setVisibility(View.GONE);
-                        downloadRandomImage(downloadManager, context);
-                    }
-                });
-            }
-        });
+
 
         onComplete = new BroadcastReceiver() {
             public void onReceive(Context context, Intent intent) {
@@ -110,6 +99,7 @@ public class ScrollingActivity extends AppCompatActivity
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 textView.setText("Search For: " + charSequence);
 
+
             }
 
             @Override
@@ -117,6 +107,14 @@ public class ScrollingActivity extends AppCompatActivity
                 //  textView.setText("what the fuk is up");
             }
         });
+
+
+
+
+
+
+
+
     }
 
     @Override
